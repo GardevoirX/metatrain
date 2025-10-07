@@ -700,7 +700,7 @@ class NanoPET(ModelInterface):
         return checkpoint
 
 
-def manual_prod(shape: List[int]) -> int:
+def manual_prod(shape: list[int]) -> int:
     # prod from standard library not supported in torchscript
     result = 1
     for dim in shape:

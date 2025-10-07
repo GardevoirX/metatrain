@@ -92,7 +92,7 @@ class PET(ModelInterface):
             "features": ModelOutput(unit="", per_atom=True)
         }  # the model is always capable of outputting the internal features
 
-        self.output_shapes: Dict[str, Dict[str, List[int]]] = {}
+        self.output_shapes: Dict[str, Dict[str, list[int]]] = {}
         self.key_labels: Dict[str, Labels] = {}
         self.property_labels: Dict[str, List[Labels]] = {}
         self.component_labels: Dict[str, List[List[Labels]]] = {}

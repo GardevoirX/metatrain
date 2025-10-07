@@ -27,12 +27,12 @@ from metatrain.utils.external_naming import to_external_name
 from metatrain.utils.units import get_gradient_units
 
 
-def _set(values: List[int]) -> List[int]:
+def _set(values: list[int]) -> list[int]:
     """This function just does `list(set(values))`.
 
     But set is not torchscript compatible, so we do it manually.
     """
-    unique_values: List[int] = []
+    unique_values: list[int] = []
     for at_type in values:
         found = False
         for seen in unique_values:
@@ -64,7 +64,7 @@ class DatasetInfo:
     def __init__(
         self,
         length_unit: Optional[str],
-        atomic_types: List[int],
+        atomic_types: list[int],
         targets: Dict[str, TargetInfo],
         extra_data: Optional[Dict[str, TargetInfo]] = None,
     ):
@@ -76,12 +76,12 @@ class DatasetInfo:
         )
 
     @property
-    def atomic_types(self) -> List[int]:
+    def atomic_types(self) -> list[int]:
         """Sorted list of unique integer atomic types."""
         return sorted(self._atomic_types)
 
     @atomic_types.setter
-    def atomic_types(self, value: List[int]):
+    def atomic_types(self, value: list[int]):
         self._atomic_types = _set(value)
 
     @property
@@ -272,7 +272,7 @@ def get_stats(dataset: Union[Dataset, Subset], dataset_info: DatasetInfo) -> str
     return stats
 
 
-def get_atomic_types(datasets: Union[Dataset, List[Dataset]]) -> List[int]:
+def get_atomic_types(datasets: Union[Dataset, List[Dataset]]) -> list[int]:
     """List of all atomic types present in a dataset or list of datasets.
 
     :param datasets: the dataset, or list of datasets
@@ -585,9 +585,9 @@ def _is_disk_dataset(dataset: Any) -> bool:
 
 
 def _save_indices(
-    train_indices: List[Optional[List[int]]],
-    val_indices: List[Optional[List[int]]],
-    test_indices: List[Optional[List[int]]],
+    train_indices: List[Optional[list[int]]],
+    val_indices: List[Optional[list[int]]],
+    test_indices: List[Optional[list[int]]],
     checkpoint_dir: Union[str, Path],
 ) -> None:
     # Save the indices of the training, validation, and test sets to the checkpoint

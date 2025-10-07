@@ -40,7 +40,7 @@ class Identity(torch.nn.Module):
 
 
 class MLPMap(ModuleMap):
-    def __init__(self, atomic_types: List[int], hypers: dict) -> None:
+    def __init__(self, atomic_types: list[int], hypers: dict) -> None:
         # hardcoded for now, but could be a hyperparameter
         activation_function = torch.nn.SiLU()
 
@@ -86,7 +86,7 @@ class MLPMap(ModuleMap):
 
 
 class LayerNormMap(ModuleMap):
-    def __init__(self, atomic_types: List[int], n_layer: int) -> None:
+    def __init__(self, atomic_types: list[int], n_layer: int) -> None:
         # one layernorm for each species
         layernorm_per_species = []
         for _ in atomic_types:

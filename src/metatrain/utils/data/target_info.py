@@ -40,7 +40,7 @@ class TargetInfo:
         self.layout = layout
         self.unit = unit if unit is not None else ""
 
-        self.blocks_shape: Dict[str, List[int]] = {}
+        self.blocks_shape: Dict[str, list[int]] = {}
         self._set_blocks_shape()
 
     @property

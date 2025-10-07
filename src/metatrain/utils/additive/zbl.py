@@ -175,7 +175,7 @@ class ZBL(torch.nn.Module):
         # Set the outputs as the ZBL energies
         targets_out: Dict[str, TensorMap] = {}
         for target_key, target in outputs.items():
-            sample_values: List[List[int]] = []
+            sample_values: List[list[int]] = []
 
             for i_system, system in enumerate(systems):
                 sample_values += [[i_system, i_atom] for i_atom in range(len(system))]

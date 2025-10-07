@@ -114,7 +114,7 @@ def concatenate_structures(
 def systems_to_batch(
     systems: List[System],
     options: NeighborListOptions,
-    all_species_list: List[int],
+    all_species_list: list[int],
     species_to_species_index: torch.Tensor,
     selected_atoms: Optional[Labels] = None,
 ):
